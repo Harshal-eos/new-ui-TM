@@ -1,7 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { Frame17_LeftColumn } from "@/components/ui/calculator-components"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
+import { Slider } from "@/components/ui/slider"
 import { formatCurrency, calculateVATRefund } from "@/lib/utils"
 
 interface Country {
@@ -18,74 +20,6 @@ const countries: Country[] = [
     { code: 'ES', name: 'Spain', vatRate: 0.21, flag: '🇪🇸' },
     { code: 'GB', name: 'United Kingdom', vatRate: 0.20, flag: '🇬🇧' },
 ]
-
-const Frame20_TravelMoneyResult = ({ refund }: { refund: number }) => (
-    <div className="bg-gray-900 text-white rounded-lg relative" style={{ padding: '24px' }} data-frame="Frame 20">
-        <div className="flex flex-col justify-center text-center">
-            <p className="text-[14px] text-gray-300 font-light leading-[1.43] mb-2">
-                Your refund with TravelMoney
-            </p>
-            <p className="text-[48px] font-medium text-primary-500 leading-[1] mb-2">
-                {formatCurrency(refund)}
-            </p>
-            <p className="text-[14px] text-gray-400 font-light leading-[1.43]">
-                Instant refunds
-            </p>
-
-            {/* TravelMoney Logo */}
-            <div className="absolute top-3 right-6 w-6 h-6">
-                <TravelMoneyLogo />
-            </div>
-        </div>
-    </div>
-)
-
-const Frame21_CompetitorResult = ({ refund }: { refund: number }) => (
-    <div className="bg-white border border-gray-100 rounded-lg" style={{ padding: '24px' }} data-frame="Frame 21">
-        <div className="flex flex-col justify-center text-center">
-            <p className="text-[14px] text-gray-700 font-light leading-[1.43] mb-2 w-[285px]">
-                Your refund with other apps
-            </p>
-            <p className="text-[18px] font-medium text-gray-500 leading-[1.56] mb-2 w-[285px]">
-                {formatCurrency(refund)}
-            </p>
-            <p className="text-[14px] text-gray-500 font-light leading-[1.43] w-[285px]">
-                ~Weeks, often months
-            </p>
-        </div>
-    </div>
-)
-
-const Frame22_VSBadge = () => (
-    <div
-        className="absolute bg-gray-900 text-white rounded-full flex items-center justify-center"
-        style={{
-            left: '155px',
-            top: '186px',
-            width: '24px',
-            height: '24px',
-        }}
-        data-frame="Frame 22"
-    >
-        <span className="text-[12px] font-light leading-[1.33]">vs</span>
-    </div>
-)
-
-const Frame16_RightColumn = ({ travelMoneyRefund, competitorRefund }: {
-    travelMoneyRefund: number
-    competitorRefund: number
-}) => (
-    <div className="relative w-[333px]" data-frame="Frame 16">
-        <Frame20_TravelMoneyResult refund={travelMoneyRefund} />
-        <div className="flex justify-center py-3">
-            <div className="bg-gray-900 text-white rounded-full flex items-center justify-center w-6 h-6">
-                <span className="text-[12px] font-light">vs</span>
-            </div>
-        </div>
-        <Frame21_CompetitorResult refund={competitorRefund} />
-        <Frame22_VSBadge />
-    </div>
-)
 
 const Calculator = () => {
     const [selectedCountry, setSelectedCountry] = React.useState<Country>(countries[0])
@@ -111,33 +45,141 @@ const Calculator = () => {
     }
 
     return (
-        <div className="w-[805px] bg-white border border-gray-50 rounded-lg card-shadow">
-            <div className="flex gap-6 p-6">
-                <Frame17_LeftColumn
-                    selectedCountry={selectedCountry}
-                    spendAmount={spendAmount}
-                    sliderValue={sliderValue}
-                    onCountryChange={handleCountryChange}
-                    onAmountChange={handleSpendAmountChange}
-                    onSliderChange={handleSliderChange}
-                />
+        <div className="w-full max-w-5xl bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                {/* Left Column - Form Controls */}
+                <div className="lg:col-span-2 p-8 space-y-6">
+                    {/* Header */}
+                    <div className="space-y-2">
+                        <h3 className="text-2xl font-serif text-gray-900 font-normal">
+                            Maximize your travel budget
+                        </h3>
+                        <p className="text-sm text-gray-600 font-light">
+                            Compare TravelMoney refunds with the competition
+                        </p>
+                    </div>
 
-                <Frame16_RightColumn
-                    travelMoneyRefund={travelMoneyRefund}
-                    competitorRefund={competitorRefund}
-                />
+                    {/* Country Selection */}
+                    <div className="space-y-3">
+                        <label className="text-sm font-medium text-gray-900">
+                            Where will you be shopping?
+                        </label>
+                        <Select value={selectedCountry.code} onValueChange={handleCountryChange}>
+                            <SelectTrigger className="w-full h-11 px-4 border border-gray-200 rounded-lg bg-white">
+                                <div className="flex items-center gap-3">
+                                    <span className="text-base">{selectedCountry.flag}</span>
+                                    <SelectValue placeholder={selectedCountry.name} />
+                                </div>
+                            </SelectTrigger>
+                            <SelectContent>
+                                {countries.map((country) => (
+                                    <SelectItem key={country.code} value={country.code}>
+                                        <div className="flex items-center gap-3">
+                                            <span className="text-base">{country.flag}</span>
+                                            <span>{country.name}</span>
+                                        </div>
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                    </div>
+
+                    {/* Amount Input */}
+                    <div className="space-y-3">
+                        <label className="text-sm font-medium text-gray-900">
+                            How much are you planning to spend?
+                        </label>
+                        <div className="flex gap-3 items-end">
+                            <input
+                                type="text"
+                                value={formatCurrency(spendAmount)}
+                                onChange={handleSpendAmountChange}
+                                className="flex-1 h-11 px-4 border border-gray-200 rounded-lg bg-white text-gray-900 focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                                placeholder="€3,600"
+                            />
+                            <Button variant="secondary" className="h-11 px-4 text-sm bg-gray-100 hover:bg-gray-200 whitespace-nowrap">
+                                A VAT of {formatCurrency(spendAmount * selectedCountry.vatRate)}
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Slider */}
+                    <div className="space-y-4">
+                        <Slider
+                            value={sliderValue}
+                            onValueChange={handleSliderChange}
+                            max={100}
+                            min={5}
+                            step={5}
+                            className="w-full"
+                        />
+                    </div>
+
+                    {/* Info Text */}
+                    <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#64748B" strokeWidth="1.5" />
+                                <path d="M2 17L12 22L22 17" stroke="#64748B" strokeWidth="1.5" />
+                                <path d="M2 12L12 17L22 12" stroke="#64748B" strokeWidth="1.5" />
+                            </svg>
+                        </div>
+                        <p className="text-sm text-gray-600 font-light leading-relaxed">
+                            Our refund rates are progressive; the more you spend, the higher the refund.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Right Column - Results */}
+                <div className="bg-gray-50/80 p-6 space-y-3">
+                    {/* TravelMoney Result */}
+                    <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-xl p-6 relative overflow-hidden">
+                        <div className="text-center space-y-2">
+                            <p className="text-xs text-gray-300">Your refund with TravelMoney</p>
+                            <p className="text-4xl font-bold text-primary-400">
+                                {formatCurrency(travelMoneyRefund)}
+                            </p>
+                            <p className="text-xs text-gray-400">Instant refunds</p>
+                        </div>
+
+                        {/* Logo */}
+                        <div className="absolute top-3 right-3">
+                            <TravelMoneyLogo />
+                        </div>
+
+                        {/* Decorative element */}
+                        <div className="absolute -top-2 -right-2 w-16 h-16 bg-primary-500/20 rounded-full blur-xl" />
+                    </div>
+
+                    {/* VS Divider */}
+                    <div className="flex justify-center py-2">
+                        <div className="bg-gray-900 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-medium">
+                            vs
+                        </div>
+                    </div>
+
+                    {/* Competitor Result */}
+                    <div className="bg-white border border-gray-200 rounded-xl p-6 text-center space-y-2">
+                        <p className="text-xs text-gray-600">Your refund with other apps</p>
+                        <p className="text-3xl font-bold text-gray-500">
+                            {formatCurrency(competitorRefund)}
+                        </p>
+                        <p className="text-xs text-gray-500">~Weeks, often months</p>
+                    </div>
+                </div>
             </div>
         </div>
     )
 }
 
 const TravelMoneyLogo = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 5L13 5L17 7L13 9L9 7V5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M13 7L17 9L13 11L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M5 5L9 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M5 9L9 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
+    <div className="w-5 h-5 text-white">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" strokeWidth="2" />
+            <polyline points="3.27,6.96 12,12.01 20.73,6.96" stroke="currentColor" strokeWidth="2" />
+            <line x1="12" y1="22.08" x2="12" y2="12" stroke="currentColor" strokeWidth="2" />
+        </svg>
+    </div>
 )
 
 export { Calculator }

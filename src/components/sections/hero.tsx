@@ -2,6 +2,8 @@
 
 import * as React from "react"
 import Image from "next/image"
+import { BackgroundGrid } from "@/components/ui/background-grid"
+import { FloatingIcons } from "@/components/ui/floating-icons"
 
 const Hero = () => {
     return (
@@ -15,43 +17,8 @@ const Hero = () => {
                     height: '715px',
                 }}
             >
-                {/* Background Pattern Grid - Frame 9 */}
-                <div className="absolute inset-0">
-                    <div className="w-full h-full flex flex-col">
-                        {/* Row 1 - 9 frames */}
-                        <div className="flex">
-                            {Array.from({ length: 9 }).map((_, i) => (
-                                <div key={`row1-${i}`} className="w-[200px] h-[120px] border border-gray-300 bg-white" style={{ marginLeft: '-1px', marginTop: '-1px' }} />
-                            ))}
-                        </div>
-                        {/* Row 2 - 7 frames */}
-                        <div className="flex" style={{ marginTop: '-1px' }}>
-                            {Array.from({ length: 7 }).map((_, i) => (
-                                <div key={`row2-${i}`} className="w-[200px] h-[120px] border border-gray-300 bg-white" style={{ marginLeft: '-1px' }} />
-                            ))}
-                        </div>
-                        {/* Row 3 - 5 frames */}
-                        <div className="flex" style={{ marginTop: '-1px' }}>
-                            {Array.from({ length: 5 }).map((_, i) => (
-                                <div key={`row3-${i}`} className="w-[200px] h-[120px] border border-gray-300 bg-white" style={{ marginLeft: '-1px' }} />
-                            ))}
-                        </div>
-                        {/* Row 4 - 3 frames */}
-                        <div className="flex" style={{ marginTop: '-1px' }}>
-                            {Array.from({ length: 3 }).map((_, i) => (
-                                <div key={`row4-${i}`} className="w-[200px] h-[120px] border border-gray-300 bg-white" style={{ marginLeft: '-1px' }} />
-                            ))}
-                        </div>
-                        {/* Row 5 - 1 frame */}
-                        <div className="flex" style={{ marginTop: '-1px' }}>
-                            <div className="w-[200px] h-[120px] border border-gray-300 bg-white" style={{ marginLeft: '-1px' }} />
-                        </div>
-                        {/* Row 6 - 1 frame */}
-                        <div className="flex" style={{ marginTop: '-1px' }}>
-                            <div className="w-[200px] h-[120px] border border-gray-300 bg-white" style={{ marginLeft: '-1px' }} />
-                        </div>
-                    </div>
-                </div>
+                {/* Background Pattern Grid - Frame 9 with exact Figma layer names */}
+                <BackgroundGrid />
 
                 {/* Second Gradient */}
                 <div
@@ -121,65 +88,8 @@ const Hero = () => {
                         Check the country rules for tax-free shopping and get your refund.
                     </p>
 
-                    {/* Floating Icons - positioned relative to Frame 12 */}
-                    <div className="relative">
-                        {/* Gift Icon - Frame 28 */}
-                        <div
-                            className="absolute bg-white/10 backdrop-blur-sm rounded-md"
-                            style={{
-                                left: '763px',
-                                top: '-444px',
-                                width: '118.85px',
-                                height: '118.85px',
-                            }}
-                        >
-                            <Image
-                                src="/images/gift-icon.png"
-                                alt="Gift icon"
-                                width={119}
-                                height={119}
-                                className="object-contain p-1"
-                            />
-                        </div>
-
-                        {/* Glasses Icon - Frame 30 */}
-                        <div
-                            className="absolute bg-white/10 backdrop-blur-sm rounded-md"
-                            style={{
-                                left: '66.83px',
-                                top: '-568.17px',
-                                width: '111.65px',
-                                height: '111.65px',
-                            }}
-                        >
-                            <Image
-                                src="/images/glasses-icon.png"
-                                alt="Glasses icon"
-                                width={112}
-                                height={112}
-                                className="object-contain"
-                            />
-                        </div>
-
-                        {/* Heart Icon - Frame 29 */}
-                        <div
-                            className="absolute bg-white/10 backdrop-blur-sm rounded-md"
-                            style={{
-                                left: '-123px',
-                                top: '-349px',
-                                width: '122.47px',
-                                height: '122.47px',
-                            }}
-                        >
-                            <Image
-                                src="/images/heart-icon.png"
-                                alt="Heart icon"
-                                width={122}
-                                height={122}
-                                className="object-contain"
-                            />
-                        </div>
-                    </div>
+                    {/* Floating Icons - Frame 28, Frame 30, Frame 29 */}
+                    <FloatingIcons />
                 </div>
             </div>
         </>

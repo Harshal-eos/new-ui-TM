@@ -2,26 +2,25 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { section } from "framer-motion/client"
 import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
-        <section className="relative flex flex-col items-center justify-center min-h-screen text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
-            {/* Background Eiffel Tower */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-40">
+        <section className="relative flex flex-col items-center min-h-screen text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
+            {/* Eiffel Tower Image at Top */}
+            <div className="w-full flex justify-center pt-20 pb-16 !mb-2">
                 <Image
-                    src="/images/hero-image.png" // <- replace with your Eiffel Tower asset
+                    src="/images/hero-image.png"
                     alt="Eiffel Tower"
-                    width={500}
-                    height={500}
-                    className="object-contain"
+                    width={400}
+                    height={400}
+                    className="object-contain opacity-60"
                     priority
                 />
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 px-4">
+            {/* Content Below Image */}
+            <div className="flex flex-col items-center justify-center px-4">
                 {/* Heading */}
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}
@@ -71,7 +70,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1, duration: 0.6 }}
-                    className="mt-24 text-gray-600 text-base sm:text-lg max-w-xl mx-auto"
+                    className="mt-24 text-gray-600 text-base sm:text-lg  mx-auto"
                 >
                     Shop abroad in <span className="font-semibold">three easy steps.</span>{" "}
                     <br />

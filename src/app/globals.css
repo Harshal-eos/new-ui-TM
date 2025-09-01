@@ -317,3 +317,25 @@ body {
 .delay-2000 {
   animation-delay: 2s;
 }
+
+/* Navbar image transparency */
+.navbar img {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.navbar .bg-transparent {
+  background-color: transparent !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Force transparency on all navbar images */
+.navbar img[src*="Branding"],
+.navbar img[src*="ArrowDownRight"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  mix-blend-mode: multiply;
+}

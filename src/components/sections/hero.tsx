@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
     return (
-        <section className="relative flex flex-col items-center min-h-screen text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
+        <section className="relative flex flex-col items-center min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
             {/* Eiffel Tower Image at Top */}
             <div className="w-full flex justify-center pt-20 pb-16 !mb-2">
                 <Image
@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
 
             {/* Content Below Image */}
-            <div className="flex flex-col items-center justify-center px-4">
+            <div className="flex flex-col items-center justify-center px-4 w-[36rem]">
                 {/* Heading */}
                 <motion.h1
                     initial={{ opacity: 0, y: 40 }}

@@ -139,6 +139,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.hero {
+  height: 1000px;
+}
+
+.navbar {
+  padding: 20px;
+}
+
+.lan-btn {
+  padding: 10px;
+}
+
 /* Typography Classes */
 .text-hero {
   font-family: var(--font-serif);

@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
 
             {/* Hero Image - Eiffel Tower */}
-            <div className="absolute top-16 right-1/4 w-[500px] h-[400px] z-10">
+            <div className="absolute right-[30%] w-[500px] h-[400px] z-10">
                 <Image
                     src="/images/hero-image.png"
                     alt="Eiffel Tower - Travel shopping destination"
@@ -49,8 +49,8 @@ const Hero = () => {
             </div>
 
             {/* Main Content */}
-            <div className="relative z-20 container mx-auto px-6 py-20 min-h-[90vh] flex flex-col justify-center">
-                <div className="max-w-6xl mx-auto text-center">
+            <div className="relative z-20 container mx-auto px-6 py-20 min-h-[135vh] flex flex-col justify-center">
+                <div className="mx-auto text-center">
                     {/* Main Headline */}
                     <h1 className="text-5xl lg:text-7xl xl:text-[120px] font-serif text-primary-600 leading-[0.85] mb-8 relative">
                         Welcome to the
@@ -72,7 +72,7 @@ const Hero = () => {
                     </h1>
 
                     {/* Subtitle */}
-                    <p className="text-lg lg:text-xl text-gray-700 font-light max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg lg:text-xl text-gray-700 font-light mx-auto leading-relaxed">
                         Shop abroad in <span className="font-medium text-primary-600">three easy steps</span>.<br />
                         Check the country rules for tax-free shopping and get your refund.
                     </p>

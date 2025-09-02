@@ -339,3 +339,11 @@ body {
   background-image: none !important;
   mix-blend-mode: multiply;
 }
+
+/* Force transparency on calculator branding logo */
+.calculator img[src*="cal-branding"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  mix-blend-mode: multiply;
+}

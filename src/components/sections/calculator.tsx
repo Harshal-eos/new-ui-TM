@@ -46,9 +46,11 @@ const Calculator = () => {
     }
 
     return (
-        <div className="w-[805px] p-6 bg-white rounded-lg shadow-[0px_1px_2px_-1px_rgba(0,0,0,0.10)] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] outline outline-1 outline-offset-[-1px] outline-slate-100 inline-flex justify-start items-start gap-6 overflow-hidden">
+        <div className="calculator w-[805px] p-8 bg-white rounded-lg shadow-[0px_1px_2px_-1px_rgba(0,0,0,0.10)] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.10)] outline outline-1 outline-offset-[-1px] outline-slate-100 inline-flex justify-start items-start gap-8 overflow-hidden">
             {/* Left Side - Form Controls */}
             <div className="inline-flex flex-col justify-start items-start gap-6">
+
+
                 {/* Header */}
                 <div className="flex flex-col justify-start items-start gap-1">
                     <div className="justify-start text-black text-3xl font-normal font-['Instrument_Serif'] leading-loose">
@@ -123,8 +125,19 @@ const Calculator = () => {
 
                 {/* Progressive Refund Info */}
                 <div className="self-stretch flex flex-col justify-start items-start gap-2">
-                    <div className="justify-start text-slate-600 text-sm font-light font-['Geist'] leading-tight">
-                        Our refund rates are progressive; the more you spend,<br />the higher the refund.
+                    <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <Image
+                                src="/images/PiggyBank.webp"
+                                alt="Piggy Bank"
+                                width={24}
+                                height={24}
+                                className="w-6 h-6"
+                            />
+                        </div>
+                        <div className="justify-start text-slate-600 text-sm font-light font-['Geist'] leading-tight">
+                            Our refund rates are progressive; the more you spend,<br />the higher the refund.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,7 +145,7 @@ const Calculator = () => {
             {/* Right Side - Comparison Results */}
             <div className="w-80 self-stretch relative bg-slate-100 rounded-lg outline outline-1 outline-offset-[-1px] outline-slate-100 inline-flex flex-col justify-start items-start overflow-hidden">
                 {/* TravelMoney Result */}
-                <div className="self-stretch flex-1 px-6 relative bg-cyan-50 flex flex-col justify-center items-start">
+                <div className="self-stretch flex-1 px-8 py-6 relative bg-cyan-50 flex flex-col justify-center items-start">
                     <div className="self-stretch text-center justify-start text-slate-900 text-sm font-light font-['Geist'] leading-tight">
                         Your refund with TravelMoney
                     </div>
@@ -143,16 +156,25 @@ const Calculator = () => {
                         Instant refunds
                     </div>
 
-                    {/* Paper Airplane Icon */}
-                    <div className="w-6 h-6 left-[297px] top-[12px] absolute overflow-hidden">
-                        <div className="w-2 h-3 left-[9px] top-[5px] absolute bg-black"></div>
-                        <div className="w-[5px] h-3 left-[13px] top-[7px] absolute bg-black"></div>
-                        <div className="w-2.5 h-2.5 left-[5px] top-[5px] absolute bg-black"></div>
+                    {/* Branding Logo - Top Right Corner */}
+                    <div className="absolute top-4 right-4">
+                        <Image
+                            src="/images/cal-branding.webp"
+                            alt="TravelMoney Calculator Branding"
+                            width={80}
+                            height={30}
+                            className="h-8 w-auto"
+                            style={{
+                                backgroundColor: 'transparent',
+                                background: 'transparent',
+                                mixBlendMode: 'multiply'
+                            }}
+                        />
                     </div>
                 </div>
 
                 {/* Competitor Result */}
-                <div className="self-stretch p-6 bg-white flex flex-col justify-start items-start overflow-hidden">
+                <div className="self-stretch px-8 py-6 bg-white flex flex-col justify-start items-start overflow-hidden">
                     <div className="w-72 text-center justify-start text-slate-900 text-sm font-light font-['Geist'] leading-tight">
                         Your refund with other apps
                     </div>

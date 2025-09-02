@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { motion } from "framer-motion";
+
 
 const Hero = () => {
     return (
@@ -22,60 +22,53 @@ const Hero = () => {
             {/* Content Below Image */}
             <div className="flex flex-col items-center justify-center px-4 w-[36rem]">
                 {/* Heading */}
-                <motion.h1
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-700"
-                >
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-700">
                     Welcome to the{" "}
                     <span className="italic font-serif">future of travel shopping</span>
-                </motion.h1>
+                </h1>
 
-                {/* Emojis */}
+                {/* Floating Icon Cards */}
                 <div className="relative mt-6 flex justify-center">
-                    {/* 😎 */}
-                    <motion.div
-                        initial={{ rotate: -15, opacity: 0 }}
-                        animate={{ rotate: -15, opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        className="absolute -top-16 -left-16 bg-white shadow-lg rounded-xl p-2 rotate-[-15deg]"
-                    >
-                        <span className="text-3xl">😎</span>
-                    </motion.div>
+                    {/* Glasses Icon */}
+                    <div className="absolute -top-16 -left-16 bg-white shadow-lg rounded-xl p-3 rotate-[-15deg]">
+                        <Image
+                            src="/images/glasses-icon.png"
+                            alt="Cool Glasses"
+                            width={32}
+                            height={32}
+                            className="w-8 h-8"
+                        />
+                    </div>
 
-                    {/* 💌 */}
-                    <motion.div
-                        initial={{ rotate: 12, opacity: 0 }}
-                        animate={{ rotate: 12, opacity: 1 }}
-                        transition={{ delay: 0.5 }}
-                        className="absolute top-12 -left-20 bg-white shadow-lg rounded-xl p-2 rotate-[12deg]"
-                    >
-                        <span className="text-3xl">💌</span>
-                    </motion.div>
+                    {/* Heart Icon */}
+                    <div className="absolute top-12 -left-20">
+                        <Image
+                            src="/images/heart-icon.png"
+                            alt="Love Heart"
+                            width={32}
+                            height={32}
+                            className="w-8 h-8"
+                        />
+                    </div>
 
-                    {/* 🎁 */}
-                    <motion.div
-                        initial={{ rotate: 10, opacity: 0 }}
-                        animate={{ rotate: 10, opacity: 1 }}
-                        transition={{ delay: 0.7 }}
-                        className="absolute top-8 -right-20 bg-white shadow-lg rounded-xl p-2 rotate-[10deg]"
-                    >
-                        <span className="text-3xl">🎁</span>
-                    </motion.div>
+                    {/* Gift Icon */}
+                    <div className="absolute top-8 -right-20 bg-white shadow-lg rounded-xl p-3 rotate-[10deg]">
+                        <Image
+                            src="/images/gift-icon.png"
+                            alt="Gift Box"
+                            width={32}
+                            height={32}
+                            className="w-8 h-8"
+                        />
+                    </div>
                 </div>
 
                 {/* Subtext */}
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.6 }}
-                    className="mt-24 text-gray-600 text-base sm:text-lg  mx-auto"
-                >
+                <p className="mt-24 text-gray-600 text-base sm:text-lg mx-auto">
                     Shop abroad in <span className="font-semibold">three easy steps.</span>{" "}
                     <br />
                     Check the country rules for tax-free shopping and get your refund.
-                </motion.p>
+                </p>
             </div>
         </section>
     )

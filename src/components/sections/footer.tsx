@@ -5,15 +5,6 @@ import Link from "next/link"
 
 const TravelMoneyLogo = () => (
     <div className="w-[186.75px] h-[70.26px] flex items-center">
-        {/* Plane Icon */}
-        <div className="w-16 h-16 flex items-center justify-center mr-4">
-            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21.02 2.83L55.66 56.25" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M40.33 7.43L60.22 62.45" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M4.07 1.16L49.36 41.65" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        </div>
-
         {/* Text Logo */}
         <div className="flex flex-col">
             <span className="text-black font-medium text-[28px] leading-tight">travelmoney</span>

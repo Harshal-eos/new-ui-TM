@@ -14,25 +14,25 @@ const TravelMoneyLogo = () => (
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-primary-50 flex flex-col justify-center items-center" style={{ padding: '44px' }}>
-            <div className="w-[1260px] flex flex-col gap-6">
+        <footer className="w-full bg-primary-50 flex flex-col justify-center items-center py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24 h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] xl:h-[420px]">
+            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col gap-6">
                 {/* Logo */}
                 <TravelMoneyLogo />
 
                 {/* Footer Content */}
-                <div className="flex justify-between gap-6 w-full">
+                <div className="flex flex-col lg:flex-row justify-between gap-6 w-full">
                     {/* Left Column - Description */}
-                    <div className="w-[400px] flex flex-col gap-3">
+                    <div className="w-full lg:w-[400px] flex flex-col gap-3">
                         <p className="text-[16px] font-light text-gray-500 leading-[1.5]">
                             Changing the game of tax-free shopping. Maximum VAT refunds, minimum wait times, zero paperwork. Shop smarter, travel richer with TravelMoney.
                         </p>
-                        <p className="text-[16px] font-light text-gray-500 leading-[1.5] text-center">
+                        <p className="text-[16px] font-light text-gray-500 leading-[1.5] text-left">
                             2025 TravelMoney. All Rights Reserved
                         </p>
                     </div>
 
                     {/* Right Columns - Navigation */}
-                    <div className="flex gap-16">
+                    <div className="flex flex-col sm:flex-row gap-8 lg:gap-16">
                         {/* Discover Column */}
                         <div className="flex flex-col gap-4">
                             <h4 className="text-[20px] font-serif text-gray-900 leading-[1] tracking-[-0.03em] text-center font-normal">

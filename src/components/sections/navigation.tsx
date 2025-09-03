@@ -34,7 +34,7 @@ const Navigation = () => {
   }
 
   return (
-    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16">
+    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: '#C7FBFF' }}>
       <div className="mx-auto flex items-center justify-between navbar">
         {/* Logo */}
         <div className="flex-shrink-0">

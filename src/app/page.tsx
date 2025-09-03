@@ -8,7 +8,7 @@ import { Calculator } from "@/components/sections/calculator"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-primary-50">
+    <main className="min-h-screen">
       {/* Navigation */}
       <Navigation />
 
@@ -23,7 +23,7 @@ export default function Home() {
       </div>
 
       {/* Content Sections with proper spacing */}
-      <div className="pt-32">
+      <div className="">
         <Features />
         <Steps />
         <FAQ />

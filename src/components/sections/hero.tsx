@@ -2,9 +2,12 @@
 
 import * as React from "react"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 
 const Hero = () => {
+    const { t } = useLanguage()
+
     return (
         <section className="relative flex flex-col items-center min-h-[100vh] sm:min-h-[110vh] lg:min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
             {/* Eiffel Tower Image at Top */}
@@ -23,8 +26,8 @@ const Hero = () => {
             <div className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
                 {/* Heading */}
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-700 leading-tight text-center max-w-4xl">
-                    Welcome to the{" "}
-                    <span className="italic font-serif">future of travel shopping</span>
+                    {t('hero.title')}{" "}
+                    <span className="italic font-serif">{t('hero.subtitle')}</span>
                 </h1>
 
                 {/* Floating Icon Cards */}
@@ -65,9 +68,9 @@ const Hero = () => {
 
                 {/* Subtext */}
                 <p className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-4xl mx-auto">
-                    Shop abroad in <span className="font-semibold">three easy steps.</span>{" "}
+                    {t('hero.description')} <span className="font-semibold">three easy steps.</span>{" "}
                     <br />
-                    Check the country rules for tax-free shopping and get your refund.
+                    {t('hero.subdescription')}
                 </p>
             </div>
         </section>

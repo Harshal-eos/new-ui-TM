@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Instrument_Serif } from "next/font/google";
 import { StructuredData } from "@/components/structured-data";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import "./globals.css";
 
 const geist = Geist({
@@ -91,7 +92,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <StructuredData />
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

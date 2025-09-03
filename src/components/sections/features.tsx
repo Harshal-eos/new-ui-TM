@@ -9,29 +9,31 @@ const Features = () => {
                 {/* Section Title */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-primary-600 leading-tight font-normal max-w-4xl mx-auto px-4 text-center">
-                        Coupled with intelligent tools
+                        Coupled with<br />
+                        intelligent tools
                     </h2>
                 </div>
 
                 {/* Features Grid */}
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
                         {/* AI Shopping Assistant - Large Card */}
-                        <div className="lg:col-span-2">
-                            <div className="bg-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-end h-full min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[440px]">
-                                <div className="space-y-4 sm:space-y-5 md:space-y-6">
-                                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-primary-600 font-normal leading-tight">
-                                        AI Shopping Assistant
+                        <div className="lg:col-span-1">
+                            <div className="bg-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-end h-full min-h-[200px] sm:min-h-[220px] md:min-h-[240px] lg:min-h-[260px]">
+                                <div className="space-y-3 sm:space-y-4 md:space-y-5">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-primary-600 font-normal leading-tight">
+                                        AI Shopping Assitant
                                     </h3>
-                                    <p className="text-gray-700 font-light leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl">
+                                    <p className="text-gray-700 font-light leading-relaxed text-sm sm:text-base md:text-lg">
                                         Get personalized brand recommendations, real-time savings calculations, and insider tips tailored to your destination and preferences.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
+
                         {/* Right Column - Stacked Features */}
-                        <div className="flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+                        <div className="lg:col-span-1 flex flex-col gap-6 sm:gap-8 md:gap-10 lg:gap-12">
                             {/* Wallet Card */}
                             <div className="flex-1">
                                 <div className="bg-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-end h-full min-h-[200px] sm:min-h-[220px] md:min-h-[240px] lg:min-h-[260px]">

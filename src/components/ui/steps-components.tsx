@@ -27,7 +27,7 @@ const Frame36_Step1 = () => (
             <div className="absolute inset-0 bg-gray-50 rounded-full" data-frame="Frame 30" />
             <div
                 className="absolute bg-primary-600/20 rounded-full h-1.5"
-                style={{ left: '1px', top: '1px', width: '126px' }}
+                style={{ left: '1px', top: '1px', width: '200px' }}
                 data-frame="Frame 33"
             />
         </div>
@@ -53,7 +53,7 @@ const Frame38_Step3 = () => (
 )
 
 const Frame32_StepsContainer = () => (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 w-full max-w-6xl mx-auto justify-center" data-frame="Frame 32">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 w-full justify-center" data-frame="Frame 32">
         <Frame36_Step1 />
         <Frame37_Step2 />
         <Frame38_Step3 />
@@ -106,7 +106,6 @@ const Frame23_Illustration = () => (
 const Frame35_StepsLayout = () => (
     <div className="flex flex-col gap-6 sm:gap-8 md:gap-10" data-frame="Frame 35">
         <Frame32_StepsContainer />
-        <div className="w-full max-w-4xl mx-auto h-2 bg-gray-50 rounded-full" data-frame="Frame 32" />
         <Frame23_Illustration />
     </div>
 )

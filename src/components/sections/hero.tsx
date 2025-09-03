@@ -6,65 +6,65 @@ import Image from "next/image"
 
 const Hero = () => {
     return (
-        <section className="relative flex flex-col items-center min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
+        <section className="relative flex flex-col items-center min-h-[100vh] sm:min-h-[110vh] lg:min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
             {/* Eiffel Tower Image at Top */}
-            <div className="w-full flex justify-center pt-20 pb-16 !mb-2">
+            <div className="w-full flex justify-center pt-0 pb-8 sm:pb-12 md:pb-16 !mb-2">
                 <Image
                     src="/images/hero-image.png"
                     alt="Eiffel Tower"
                     width={400}
                     height={400}
-                    className="object-contain opacity-60"
+                    className="object-contain opacity-60 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[400px] lg:h-[400px]"
                     priority
                 />
             </div>
 
             {/* Content Below Image */}
-            <div className="flex flex-col items-center justify-center px-4 w-[36rem]">
+            <div className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
                 {/* Heading */}
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-blue-700">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-700 leading-tight text-center max-w-4xl">
                     Welcome to the{" "}
                     <span className="italic font-serif">future of travel shopping</span>
                 </h1>
 
                 {/* Floating Icon Cards */}
-                <div className="relative mt-6 flex justify-center">
+                <div className="relative mt-4 sm:mt-6 md:mt-8 flex justify-center">
                     {/* Glasses Icon */}
-                    <div className="absolute -top-16 -left-16 bg-white shadow-lg rounded-xl p-3 rotate-[-15deg]">
+                    <div className="absolute -top-8 sm:-top-12 md:-top-16 -left-8 sm:-left-12 md:-left-16 bg-white shadow-lg rounded-xl p-2 sm:p-3 rotate-[-15deg]">
                         <Image
                             src="/images/glasses-icon.png"
                             alt="Cool Glasses"
                             width={32}
                             height={32}
-                            className="w-8 h-8"
+                            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                         />
                     </div>
 
                     {/* Heart Icon */}
-                    <div className="absolute top-12 -left-20">
+                    <div className="absolute top-6 sm:top-8 md:top-12 -left-12 sm:-left-16 md:-left-20">
                         <Image
                             src="/images/heart-icon.png"
                             alt="Love Heart"
                             width={32}
                             height={32}
-                            className="w-8 h-8"
+                            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                         />
                     </div>
 
                     {/* Gift Icon */}
-                    <div className="absolute top-8 -right-20 bg-white shadow-lg rounded-xl p-3 rotate-[10deg]">
+                    <div className="absolute top-4 sm:top-6 md:top-8 -right-12 sm:-right-16 md:-right-20 bg-white shadow-lg rounded-xl p-2 sm:p-3 rotate-[10deg]">
                         <Image
                             src="/images/gift-icon.png"
                             alt="Gift Box"
                             width={32}
                             height={32}
-                            className="w-8 h-8"
+                            className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8"
                         />
                     </div>
                 </div>
 
                 {/* Subtext */}
-                <p className="mt-24 text-gray-600 text-base sm:text-lg mx-auto">
+                <p className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl text-center max-w-4xl mx-auto">
                     Shop abroad in <span className="font-semibold">three easy steps.</span>{" "}
                     <br />
                     Check the country rules for tax-free shopping and get your refund.

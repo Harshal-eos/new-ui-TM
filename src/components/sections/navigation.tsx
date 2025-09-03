@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Globe, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -27,6 +28,7 @@ const TravelMoneyLogo = () => (
 )
 
 const Navigation = () => {
+  const router = useRouter()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = React.useState(false)
   const [selectedLanguage, setSelectedLanguage] = React.useState('EN')
@@ -44,8 +46,8 @@ const Navigation = () => {
     setIsLanguageDropdownOpen(false)
     // Store selected language in localStorage for persistence
     localStorage.setItem('selectedLanguage', code)
-    // Change URL to language-specific path
-    window.history.pushState({}, '', `/${code}`)
+    // Navigate to language-specific path using Next.js router
+    router.push(`/${code}`)
     // Trigger a custom event to notify other components of language change
     window.dispatchEvent(new CustomEvent('languageChanged', { detail: { code, name: language } }))
   }
@@ -66,7 +68,7 @@ const Navigation = () => {
       // Default to English and redirect to /en
       setSelectedLanguage('EN')
       localStorage.setItem('selectedLanguage', 'en')
-      window.history.pushState({}, '', '/en')
+      router.push('/en')
     }
   }, [])
 

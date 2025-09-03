@@ -20,43 +20,51 @@ const Step = ({ number, title, isActive }: StepProps) => (
     </div>
 )
 
-const Frame36_Step1 = () => (
-    <div className="flex flex-col gap-1.5 w-full sm:w-auto" data-frame="Frame 36">
-        <Step number="1." title="Request Custom Invoice" isActive={false} />
+const Frame36_Step1 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
+    <div className="flex flex-col gap-1.5 w-full sm:flex-1 cursor-pointer" data-frame="Frame 36" onClick={onClick}>
+        <Step number="1." title="Request Custom Invoice" isActive={isActive} />
         <div className="w-full h-2 bg-gray-50 rounded-full relative" data-frame="Frame 34">
             <div className="absolute inset-0 bg-gray-50 rounded-full" data-frame="Frame 30" />
             <div
                 className="absolute bg-primary-600/20 rounded-full h-1.5"
-                style={{ left: '1px', top: '1px', width: '200px' }}
+                style={{ right: '0px', top: '1px', width: isActive ? '60%' : '0%' }}
                 data-frame="Frame 33"
             />
         </div>
     </div>
 )
 
-const Frame37_Step2 = () => (
-    <div className="flex flex-col gap-2 w-full sm:w-auto" data-frame="Frame 37">
-        <Step number="2." title="Upload the invoice & receipt" isActive={true} />
-        <div className="flex items-stretch gap-2.5 w-full h-2" data-frame="Frame 31">
-            <div className="bg-gray-50 rounded-full flex-1" />
+const Frame37_Step2 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
+    <div className="flex flex-col gap-2 w-full sm:flex-1 cursor-pointer" data-frame="Frame 37" onClick={onClick}>
+        <Step number="2." title="Upload the invoice & receipt" isActive={isActive} />
+        <div className="w-full h-2 bg-gray-50 rounded-full relative" data-frame="Frame 31">
+            <div className="absolute inset-0 bg-gray-50 rounded-full" />
+            <div
+                className="absolute bg-primary-600/20 rounded-full h-1.5"
+                style={{ right: '0px', top: '1px', width: isActive ? '30%' : '0%' }}
+            />
         </div>
     </div>
 )
 
-const Frame38_Step3 = () => (
-    <div className="flex flex-col gap-2 w-full sm:w-auto" data-frame="Frame 38">
-        <Step number="3." title="Scan barcode at the airport" isActive={false} />
-        <div className="flex items-stretch gap-2.5 w-full h-2" data-frame="Frame 31">
-            <div className="bg-gray-50 rounded-full flex-1" />
+const Frame38_Step3 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
+    <div className="flex flex-col gap-2 w-full sm:flex-1 cursor-pointer" data-frame="Frame 38" onClick={onClick}>
+        <Step number="3." title="Scan barcode at the airport" isActive={isActive} />
+        <div className="w-full h-2 bg-gray-50 rounded-full relative" data-frame="Frame 31">
+            <div className="absolute inset-0 bg-gray-50 rounded-full" />
+            <div
+                className="absolute bg-primary-600/20 rounded-full h-1.5"
+                style={{ right: '0px', top: '1px', width: isActive ? '15%' : '0%' }}
+            />
         </div>
     </div>
 )
 
-const Frame32_StepsContainer = () => (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 w-full justify-center" data-frame="Frame 32">
-        <Frame36_Step1 />
-        <Frame37_Step2 />
-        <Frame38_Step3 />
+const Frame32_StepsContainer = ({ activeStep, setActiveStep }: { activeStep: number, setActiveStep: (step: number) => void }) => (
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 w-full justify-between" data-frame="Frame 32">
+        <Frame36_Step1 isActive={activeStep === 0} onClick={() => setActiveStep(0)} />
+        <Frame37_Step2 isActive={activeStep === 1} onClick={() => setActiveStep(1)} />
+        <Frame38_Step3 isActive={activeStep === 2} onClick={() => setActiveStep(2)} />
     </div>
 )
 
@@ -103,11 +111,15 @@ const Frame23_Illustration = () => (
     </div>
 )
 
-const Frame35_StepsLayout = () => (
-    <div className="flex flex-col gap-6 sm:gap-8 md:gap-10" data-frame="Frame 35">
-        <Frame32_StepsContainer />
-        <Frame23_Illustration />
-    </div>
-)
+const Frame35_StepsLayout = () => {
+    const [activeStep, setActiveStep] = React.useState(0) // Start with step 1 active
+
+    return (
+        <div className="flex flex-col gap-6 sm:gap-8 md:gap-10" data-frame="Frame 35">
+            <Frame32_StepsContainer activeStep={activeStep} setActiveStep={setActiveStep} />
+            <Frame23_Illustration />
+        </div>
+    )
+}
 
 export { Frame35_StepsLayout, Frame32_StepsContainer, Frame23_Illustration }

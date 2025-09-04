@@ -6,6 +6,7 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Globe, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const TravelMoneyLogo = () => (
   <Link href="/" className="flex items-center">
@@ -29,6 +30,7 @@ const TravelMoneyLogo = () => (
 
 const Navigation = () => {
   const router = useRouter()
+  const { t } = useLanguage()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = React.useState(false)
   const [selectedLanguage, setSelectedLanguage] = React.useState('EN')
@@ -70,6 +72,28 @@ const Navigation = () => {
       localStorage.setItem('selectedLanguage', 'en')
       router.push('/en')
     }
+  }, [router])
+
+  // Listen for URL changes to update language dropdown
+  React.useEffect(() => {
+    const handleUrlChange = () => {
+      const currentPath = window.location.pathname
+      const pathLanguage = currentPath.split('/')[1]
+
+      if (pathLanguage && ['en', 'fr', 'es'].includes(pathLanguage)) {
+        const language = languages.find(lang => lang.code === pathLanguage)
+        if (language) {
+          setSelectedLanguage(language.name)
+        }
+      }
+    }
+
+    // Listen for popstate events (back/forward navigation)
+    window.addEventListener('popstate', handleUrlChange)
+
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange)
+    }
   }, [])
 
   // Close dropdown when clicking outside
@@ -109,7 +133,7 @@ const Navigation = () => {
             href="/shoppers"
             className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
           >
-            Shoppers
+            {t('nav.shoppers')}
             <img
               src="/images/ArrowDownRight.webp"
               alt="Arrow Down Right"
@@ -127,13 +151,13 @@ const Navigation = () => {
             href="/merchants"
             className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
           >
-            Merchants
+            {t('nav.merchants')}
           </Link>
           <Link
             href="/blog"
             className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
           >
-            Blog
+            {t('nav.blog')}
             <img
               src="/images/ArrowDownRight.webp"
               alt="Arrow Down Right"
@@ -151,19 +175,19 @@ const Navigation = () => {
             href="/faq"
             className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
           >
-            FAQ
+            {t('nav.faq')}
           </Link>
           <Link
             href="/about"
             className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
           >
-            About
+            {t('nav.about')}
           </Link>
           <Link
             href="/extension"
             className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
           >
-            Extension
+            {t('nav.extension')}
           </Link>
         </div>
 
@@ -224,7 +248,7 @@ const Navigation = () => {
                 className="flex items-center justify-between text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span>Shoppers</span>
+                <span>{t('nav.shoppers')}</span>
                 <img
                   src="/images/ArrowDownRight.webp"
                   alt="Arrow Down Right"
@@ -243,14 +267,14 @@ const Navigation = () => {
                 className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Merchants
+                {t('nav.merchants')}
               </Link>
               <Link
                 href="/blog"
                 className="flex items-center justify-between text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <span>Blog</span>
+                <span>{t('nav.blog')}</span>
                 <img
                   src="/images/ArrowDownRight.webp"
                   alt="Arrow Down Right"
@@ -269,21 +293,21 @@ const Navigation = () => {
                 className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                FAQ
+                {t('nav.faq')}
               </Link>
               <Link
                 href="/about"
                 className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About
+                {t('nav.about')}
               </Link>
               <Link
                 href="/extension"
                 className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Extension
+                {t('nav.extension')}
               </Link>
             </div>
 

@@ -13,8 +13,8 @@ interface PageProps {
     }
 }
 
-export default function Home({ params }: PageProps) {
-    const { lang } = params
+export default async function Home({ params }: PageProps) {
+    const { lang } = await params
 
     // Validate language parameter
     if (!['en', 'fr', 'es'].includes(lang)) {

@@ -64,8 +64,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             localStorage.setItem('selectedLanguage', pathLanguage)
         } else {
             // Default to English
-            const savedLanguage = localStorage.getItem('selectedLanguage') || 'en'
-            setLanguage(savedLanguage)
+            setLanguage('en')
+            localStorage.setItem('selectedLanguage', 'en')
         }
     }, [])
 
@@ -75,9 +75,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
             setLanguage(event.detail.code)
         }
 
+        // Listen for URL changes (back/forward navigation)
+        const handleUrlChange = () => {
+            const currentPath = window.location.pathname
+            const pathLanguage = currentPath.split('/')[1]
+
+            if (pathLanguage && ['en', 'fr', 'es'].includes(pathLanguage)) {
+                setLanguage(pathLanguage)
+                localStorage.setItem('selectedLanguage', pathLanguage)
+            }
+        }
+
         window.addEventListener('languageChanged', handleLanguageChange as EventListener)
+        window.addEventListener('popstate', handleUrlChange)
+
         return () => {
             window.removeEventListener('languageChanged', handleLanguageChange as EventListener)
+            window.removeEventListener('popstate', handleUrlChange)
         }
     }, [])
 

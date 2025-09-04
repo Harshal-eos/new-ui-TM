@@ -6,10 +6,10 @@ import { useLanguage } from "@/contexts/LanguageContext"
 
 
 const Hero = () => {
-    const { t } = useLanguage()
+    const { t, language } = useLanguage()
 
     return (
-        <section className="relative flex flex-col items-center min-h-[100vh] sm:min-h-[110vh] lg:min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
+        <section key={language} className="relative flex flex-col items-center min-h-[100vh] sm:min-h-[110vh] lg:min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
             {/* Eiffel Tower Image at Top */}
             <div className="w-full flex justify-center pt-0 pb-8 sm:pb-12 md:pb-16 !mb-2">
                 <Image

@@ -10,23 +10,14 @@ const Hero = () => {
     return (
         <div className="relative h-[150vh] w-full overflow-hidden" style={{ backgroundColor: 'rgb(120, 38, 242)' }}>
             {/* Hero Image with Grid */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+            <div className="absolute left-1/2 transform -translate-x-1/2 -top-20">
                 <Image
                     src="/images/hero-image.png"
                     alt="Eiffel Tower"
-                    width={400}
-                    height={400}
-                    className="object-contain opacity-90"
+                    width={5000}
+                    height={1500}
+                    className="w-screen h-auto max-w-none"
                 />
-                {/* Grid Pattern only for image area */}
-                <div className="absolute inset-0 opacity-30" style={{
-                    backgroundImage: `
-                        linear-gradient(rgb(120, 38, 242) 1px, transparent 1px),
-                        linear-gradient(90deg, rgb(120, 38, 242) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '100px 100px',
-                    backgroundPosition: '0 0, 0 0'
-                }}></div>
             </div>
 
             {/* Floating Purple Cards with 3D Images */}

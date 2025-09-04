@@ -120,7 +120,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '6px' }}>
+    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '34px' }}>
       <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">

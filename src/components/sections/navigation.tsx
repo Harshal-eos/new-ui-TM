@@ -13,7 +13,7 @@ const TravelMoneyLogo = () => (
     {/* Black Logo - Stylized paper airplane */}
     <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
       <img
-        src="/images/Branding.webp"
+        src="/images/Branding_old.webp"
         alt="TravelMoney Logo"
         width={32}
         height={32}
@@ -120,7 +120,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="w-full py-2 px-2 sm:py-4 sm:px-4 md:py-6 md:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '8px 16px' }}>
+    <nav className="w-full py-2 px-2 sm:py-4 sm:px-4 md:py-6 md:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '30px 30px 10px' }}>
       <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">

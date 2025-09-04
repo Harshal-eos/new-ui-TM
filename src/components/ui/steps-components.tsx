@@ -23,7 +23,7 @@ const Step = ({ number, title, isActive }: StepProps) => (
 const Frame36_Step1 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
     <div className="flex flex-col gap-1.5 w-full sm:flex-1 cursor-pointer" data-frame="Frame 36" onClick={onClick}>
         <Step number="1." title="Request Custom Invoice" isActive={isActive} />
-        <div className="w-full h-2 bg-gray-100 rounded-full relative" data-frame="Frame 34">
+        <div className="w-full h-2 rounded-full relative" style={{ backgroundColor: '#7826F2' }} data-frame="Frame 34">
             <div className="absolute inset-0 bg-gray-100 rounded-full" data-frame="Frame 30" />
             <div
                 className="absolute bg-primary-500 rounded-full h-1.5"
@@ -37,7 +37,7 @@ const Frame36_Step1 = ({ isActive, onClick }: { isActive: boolean, onClick: () =
 const Frame37_Step2 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
     <div className="flex flex-col gap-2 w-full sm:flex-1 cursor-pointer" data-frame="Frame 37" onClick={onClick}>
         <Step number="2." title="Upload the invoice & receipt" isActive={isActive} />
-        <div className="w-full h-2 bg-gray-100 rounded-full relative" data-frame="Frame 31">
+        <div className="w-full h-2 rounded-full relative" style={{ backgroundColor: '#7826F2' }} data-frame="Frame 31">
             <div className="absolute inset-0 bg-gray-100 rounded-full" />
             <div
                 className="absolute bg-primary-500 rounded-full h-1.5"
@@ -50,7 +50,7 @@ const Frame37_Step2 = ({ isActive, onClick }: { isActive: boolean, onClick: () =
 const Frame38_Step3 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
     <div className="flex flex-col gap-2 w-full sm:flex-1 cursor-pointer" data-frame="Frame 38" onClick={onClick}>
         <Step number="3." title="Scan barcode at the airport" isActive={isActive} />
-        <div className="w-full h-2 bg-gray-100 rounded-full relative" data-frame="Frame 31">
+        <div className="w-full h-2 rounded-full relative" style={{ backgroundColor: '#7826F2' }} data-frame="Frame 31">
             <div className="absolute inset-0 bg-gray-100 rounded-full" />
             <div
                 className="absolute bg-primary-500 rounded-full h-1.5"
@@ -69,41 +69,33 @@ const Frame32_StepsContainer = ({ activeStep, setActiveStep }: { activeStep: num
 )
 
 const Frame23_Illustration = () => (
-    <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] bg-primary-100 rounded-lg relative overflow-hidden" data-frame="Frame 23">
-        {/* Background Gradient */}
-        <div
-            className="absolute opacity-60 pointer-events-none inset-0"
-            style={{
-                background: 'radial-gradient(ellipse at center, #40A9FF 0%, #40F2FF 100%)',
-                filter: 'blur(200px)',
-            }}
-            data-frame="Gradient"
-        />
+    <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] rounded-lg relative overflow-hidden" style={{ backgroundColor: '#7826F2' }} data-frame="Frame 23">
 
         {/* Frame 39 - Mobile Phone Illustration */}
         <div
-            className="absolute z-10 inset-0"
+            className="absolute z-10 inset-0 flex items-center justify-center"
+            style={{ marginLeft: '4rem' }}
             data-frame="Frame 39"
         >
             <Image
                 src="/images/calculator-bg.png"
                 alt="Mobile app interface showing invoice upload"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
         </div>
 
         {/* Frame 40 - Step Details */}
         <div
-            className="absolute z-20 bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-auto sm:w-80"
+            className="absolute z-20 top-1/2 left-4 right-4 sm:left-8 sm:right-auto sm:w-80 transform -translate-y-1/2"
             data-frame="Frame 40"
         >
             <div className="flex flex-col gap-1">
-                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-gray-700 leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-white leading-tight">
                     Request custom invoice with VAT details
                 </h3>
-                <p className="text-xs sm:text-sm md:text-base font-light text-gray-500 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base font-light text-white leading-relaxed">
                     Ask the retailer to prepare a detailed invoice that clearly shows the VAT amount and your personal information.
                 </p>
             </div>

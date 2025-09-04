@@ -31,7 +31,7 @@ export default async function Home({ params }: PageProps) {
                 <Hero />
 
                 {/* Calculator positioned as overlay */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-40">
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-40" style={{ position: 'absolute', top: '300px' }}>
                     <Calculator />
                 </div>
             </div>

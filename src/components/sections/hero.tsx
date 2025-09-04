@@ -20,19 +20,26 @@ const Hero = () => {
             {/* Color gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-purple-700/70 to-purple-900/80"></div>
 
-            {/* Trees silhouettes */}
-            <div className="absolute bottom-32 left-20">
-                <svg width="60" height="40" viewBox="0 0 60 40" fill="none">
-                    <path d="M10 40 Q15 25 20 30 Q25 20 30 25 Q35 15 40 20 Q45 25 50 40"
-                        fill="rgba(139, 69, 196, 0.6)" />
-                </svg>
+            {/* Floating Purple Cards with 3D Images */}
+            {/* Top-Right Card - Sunglasses - overlapping "e" in "Welcome" and "t" in "the" */}
+            <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-purple-500 rounded-lg transform rotate-12 shadow-lg backdrop-blur-sm">
+                <div className="flex items-center justify-center h-full">
+                    <Image src="/images/glasses-icon.png" alt="Sunglasses" width={32} height={32} />
+                </div>
             </div>
 
-            <div className="absolute bottom-32 right-20">
-                <svg width="80" height="50" viewBox="0 0 80 50" fill="none">
-                    <path d="M10 50 Q20 30 30 35 Q40 25 50 30 Q60 20 70 50"
-                        fill="rgba(139, 69, 196, 0.6)" />
-                </svg>
+            {/* Bottom-Left Card - Heart - overlapping "u" in "future" and "e" in "of" */}
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-500 rounded-lg transform -rotate-12 shadow-lg backdrop-blur-sm">
+                <div className="flex items-center justify-center h-full">
+                    <Image src="/images/heart-icon.png" alt="Heart" width={32} height={32} />
+                </div>
+            </div>
+
+            {/* Mid-Right Card - Gift - overlapping "g" in "shopping" */}
+            <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-purple-500 rounded-lg transform rotate-6 shadow-lg backdrop-blur-sm">
+                <div className="flex items-center justify-center h-full">
+                    <Image src="/images/gift-icon.png" alt="Gift" width={32} height={32} />
+                </div>
             </div>
 
             {/* Main content */}

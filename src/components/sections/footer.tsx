@@ -7,14 +7,14 @@ const TravelMoneyLogo = () => (
     <div className="w-[186.75px] h-[70.26px] flex items-center">
         {/* Text Logo */}
         <div className="flex flex-col">
-            <span className="text-black font-medium text-[28px] leading-tight">travelmoney</span>
+            <span className="text-white font-medium text-[28px] leading-tight">travelmoney</span>
         </div>
     </div>
 )
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-primary-50 flex flex-col justify-center items-center py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24 h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] xl:h-[420px]">
+        <footer className="w-full bg-primary-600 flex flex-col justify-center items-center py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24 h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] xl:h-[420px]">
             <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col gap-6">
                 {/* Logo */}
                 <TravelMoneyLogo />
@@ -23,10 +23,10 @@ const Footer = () => {
                 <div className="flex flex-col lg:flex-row justify-between gap-6 w-full">
                     {/* Left Column - Description */}
                     <div className="w-full lg:w-[400px] flex flex-col gap-3">
-                        <p className="text-[16px] font-light text-gray-500 leading-[1.5]">
+                        <p className="text-[16px] font-light text-white leading-[1.5]">
                             Changing the game of tax-free shopping. Maximum VAT refunds, minimum wait times, zero paperwork. Shop smarter, travel richer with TravelMoney.
                         </p>
-                        <p className="text-[16px] font-light text-gray-500 leading-[1.5] text-left">
+                        <p className="text-[16px] font-light text-white leading-[1.5] text-left">
                             2025 TravelMoney. All Rights Reserved
                         </p>
                     </div>
@@ -35,26 +35,26 @@ const Footer = () => {
                     <div className="flex flex-col sm:flex-row gap-8 lg:gap-16">
                         {/* Discover Column */}
                         <div className="flex flex-col gap-4">
-                            <h4 className="text-[20px] font-serif text-gray-900 leading-[1] tracking-[-0.03em] text-center font-normal">
+                            <h4 className="text-[20px] font-serif text-white leading-[1] tracking-[-0.03em] text-center font-normal">
                                 Discover
                             </h4>
                             <div className="flex flex-col gap-4">
-                                <Link href="/" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Home
                                 </Link>
-                                <Link href="/shoppers" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/shoppers" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Shoppers
                                 </Link>
-                                <Link href="/merchants" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/merchants" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Merchants
                                 </Link>
-                                <Link href="/blog" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/blog" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Blog
                                 </Link>
-                                <Link href="/faq" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/faq" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     FAQ
                                 </Link>
-                                <Link href="/about" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/about" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     About
                                 </Link>
                             </div>
@@ -62,17 +62,17 @@ const Footer = () => {
 
                         {/* Resources Column */}
                         <div className="flex flex-col gap-4">
-                            <h4 className="text-[20px] font-serif text-gray-900 leading-[1] tracking-[-0.03em] text-center font-normal">
+                            <h4 className="text-[20px] font-serif text-white leading-[1] tracking-[-0.03em] text-center font-normal">
                                 Resources
                             </h4>
                             <div className="flex flex-col gap-4">
-                                <Link href="/cookie-policy" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/cookie-policy" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Cookie Policy
                                 </Link>
-                                <Link href="/privacy-policy" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/privacy-policy" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Privacy Policy
                                 </Link>
-                                <Link href="/terms" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="/terms" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     Terms & Conditions
                                 </Link>
                             </div>
@@ -80,14 +80,14 @@ const Footer = () => {
 
                         {/* Connect Column */}
                         <div className="flex flex-col gap-4">
-                            <h4 className="text-[20px] font-serif text-gray-900 leading-[1] tracking-[-0.03em] text-center font-normal">
+                            <h4 className="text-[20px] font-serif text-white leading-[1] tracking-[-0.03em] text-center font-normal">
                                 Connect with us
                             </h4>
                             <div className="flex flex-col gap-4">
-                                <Link href="https://twitter.com/travelmoney" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="https://twitter.com/travelmoney" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     X (Twitter)
                                 </Link>
-                                <Link href="https://linkedin.com/company/travelmoney" className="text-[16px] font-light text-gray-500 leading-[1.5] text-center hover:text-gray-700 transition-colors">
+                                <Link href="https://linkedin.com/company/travelmoney" className="text-[16px] font-light text-white leading-[1.5] text-center hover:text-gray-200 transition-colors">
                                     LinkedIn
                                 </Link>
                             </div>

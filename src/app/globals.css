@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Colors */
-  --primary-50: #E8FDFF;
-  --primary-100: #C7FBFF;
-  --primary-500: #40A9FF;
-  --primary-600: #1D4ED8;
+  /* Brand Colors - Updated to match Figma design */
+  --primary-50: #F3F0FF;
+  --primary-100: #E8E0FF;
+  --primary-500: #7826F2;
+  --primary-600: #7826F2;
   --primary-900: #020617;
 
   /* Neutral Colors */

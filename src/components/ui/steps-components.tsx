@@ -23,10 +23,10 @@ const Step = ({ number, title, isActive }: StepProps) => (
 const Frame36_Step1 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
     <div className="flex flex-col gap-1.5 w-full sm:flex-1 cursor-pointer" data-frame="Frame 36" onClick={onClick}>
         <Step number="1." title="Request Custom Invoice" isActive={isActive} />
-        <div className="w-full h-2 bg-gray-50 rounded-full relative" data-frame="Frame 34">
-            <div className="absolute inset-0 bg-gray-50 rounded-full" data-frame="Frame 30" />
+        <div className="w-full h-2 bg-gray-100 rounded-full relative" data-frame="Frame 34">
+            <div className="absolute inset-0 bg-gray-100 rounded-full" data-frame="Frame 30" />
             <div
-                className="absolute bg-primary-600/20 rounded-full h-1.5"
+                className="absolute bg-primary-500 rounded-full h-1.5"
                 style={{ right: '0px', top: '1px', width: isActive ? '60%' : '0%' }}
                 data-frame="Frame 33"
             />
@@ -37,10 +37,10 @@ const Frame36_Step1 = ({ isActive, onClick }: { isActive: boolean, onClick: () =
 const Frame37_Step2 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
     <div className="flex flex-col gap-2 w-full sm:flex-1 cursor-pointer" data-frame="Frame 37" onClick={onClick}>
         <Step number="2." title="Upload the invoice & receipt" isActive={isActive} />
-        <div className="w-full h-2 bg-gray-50 rounded-full relative" data-frame="Frame 31">
-            <div className="absolute inset-0 bg-gray-50 rounded-full" />
+        <div className="w-full h-2 bg-gray-100 rounded-full relative" data-frame="Frame 31">
+            <div className="absolute inset-0 bg-gray-100 rounded-full" />
             <div
-                className="absolute bg-primary-600/20 rounded-full h-1.5"
+                className="absolute bg-primary-500 rounded-full h-1.5"
                 style={{ right: '0px', top: '1px', width: isActive ? '30%' : '0%' }}
             />
         </div>
@@ -50,10 +50,10 @@ const Frame37_Step2 = ({ isActive, onClick }: { isActive: boolean, onClick: () =
 const Frame38_Step3 = ({ isActive, onClick }: { isActive: boolean, onClick: () => void }) => (
     <div className="flex flex-col gap-2 w-full sm:flex-1 cursor-pointer" data-frame="Frame 38" onClick={onClick}>
         <Step number="3." title="Scan barcode at the airport" isActive={isActive} />
-        <div className="w-full h-2 bg-gray-50 rounded-full relative" data-frame="Frame 31">
-            <div className="absolute inset-0 bg-gray-50 rounded-full" />
+        <div className="w-full h-2 bg-gray-100 rounded-full relative" data-frame="Frame 31">
+            <div className="absolute inset-0 bg-gray-100 rounded-full" />
             <div
-                className="absolute bg-primary-600/20 rounded-full h-1.5"
+                className="absolute bg-primary-500 rounded-full h-1.5"
                 style={{ right: '0px', top: '1px', width: isActive ? '15%' : '0%' }}
             />
         </div>

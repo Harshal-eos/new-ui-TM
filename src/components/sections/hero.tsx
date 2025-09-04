@@ -9,9 +9,16 @@ const Hero = () => {
     const { t, language } = useLanguage()
 
     return (
-        <section key={language} className="relative flex flex-col items-center min-h-[100vh] sm:min-h-[110vh] lg:min-h-[115vh] text-center overflow-hidden bg-gradient-to-b from-sky-50 to-sky-100">
+        <section key={language} className="relative flex flex-col items-center min-h-[100vh] sm:min-h-[110vh] lg:min-h-[115vh] text-center overflow-hidden bg-white">
+            {/* Background Gradient Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+                {/* Purple gradient circles */}
+                <div className="absolute top-20 right-20 w-96 h-96 bg-purple-200 rounded-full opacity-20 blur-3xl"></div>
+                <div className="absolute top-40 left-20 w-80 h-80 bg-purple-300 rounded-full opacity-30 blur-3xl"></div>
+            </div>
+
             {/* Eiffel Tower Image at Top */}
-            <div className="w-full flex justify-center pt-0 pb-8 sm:pb-12 md:pb-16 !mb-2">
+            <div className="w-full flex justify-center pt-0 pb-8 sm:pb-12 md:pb-16 !mb-2 relative z-10">
                 <Image
                     src="/images/hero-image.png"
                     alt="Eiffel Tower"
@@ -23,9 +30,9 @@ const Hero = () => {
             </div>
 
             {/* Content Below Image */}
-            <div className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+            <div className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl relative z-10">
                 {/* Heading */}
-                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-700 leading-tight text-center max-w-4xl">
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center max-w-4xl" style={{ color: '#7826F2' }}>
                     {t('hero.title')}{" "}
                     <span className="italic font-serif">{t('hero.subtitle')}</span>
                 </h1>
@@ -33,7 +40,7 @@ const Hero = () => {
                 {/* Floating Icon Cards */}
                 <div className="relative mt-4 sm:mt-6 md:mt-8 flex justify-center">
                     {/* Glasses Icon */}
-                    <div className="absolute -top-8 sm:-top-12 md:-top-16 -left-8 sm:-left-12 md:-left-16 bg-white shadow-lg rounded-xl p-2 sm:p-3 rotate-[-15deg]">
+                    <div className="absolute -top-8 sm:-top-12 md:-top-16 -left-8 sm:-left-12 md:-left-16 bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-2 sm:p-3 rotate-[-15deg]">
                         <Image
                             src="/images/glasses-icon.png"
                             alt="Cool Glasses"
@@ -55,7 +62,7 @@ const Hero = () => {
                     </div>
 
                     {/* Gift Icon */}
-                    <div className="absolute top-4 sm:top-6 md:top-8 -right-12 sm:-right-16 md:-right-20 bg-white shadow-lg rounded-xl p-2 sm:p-3 rotate-[10deg]">
+                    <div className="absolute top-4 sm:top-6 md:top-8 -right-12 sm:-right-16 md:-right-20 bg-white/10 backdrop-blur-sm shadow-lg rounded-xl p-2 sm:p-3 rotate-[10deg]">
                         <Image
                             src="/images/gift-icon.png"
                             alt="Gift Box"

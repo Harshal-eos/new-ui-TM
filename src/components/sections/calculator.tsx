@@ -53,7 +53,7 @@ const Calculator = () => {
 
                 {/* Header */}
                 <div className="flex flex-col justify-start items-start gap-2">
-                    <div className="justify-start text-black text-2xl font-normal font-['Instrument_Serif'] leading-tight">
+                    <div className="justify-start text-2xl font-normal font-['Instrument_Serif'] leading-tight" style={{ color: '#7826F2' }}>
                         Maximize your travel budget
                     </div>
                     <div className="justify-start text-slate-500 text-sm font-light font-['Geist'] leading-tight">

@@ -120,7 +120,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: '#C7FBFF' }}>
+    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16 bg-white">
       <div className="mx-auto flex items-center justify-between navbar">
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -131,7 +131,7 @@ const Navigation = () => {
         <div className="hidden lg:flex items-center gap-16">
           <Link
             href="/shoppers"
-            className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
+            className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
           >
             {t('nav.shoppers')}
             <img
@@ -139,7 +139,7 @@ const Navigation = () => {
               alt="Arrow Down Right"
               width={16}
               height={16}
-              className="text-gray-400"
+              className="text-primary-600"
               style={{
                 backgroundColor: 'transparent',
                 background: 'transparent',
@@ -149,13 +149,13 @@ const Navigation = () => {
           </Link>
           <Link
             href="/merchants"
-            className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
+            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
           >
             {t('nav.merchants')}
           </Link>
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
+            className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
           >
             {t('nav.blog')}
             <img
@@ -163,7 +163,7 @@ const Navigation = () => {
               alt="Arrow Down Right"
               width={16}
               height={16}
-              className="text-gray-400"
+              className="text-primary-600"
               style={{
                 backgroundColor: 'transparent',
                 background: 'transparent',
@@ -173,19 +173,19 @@ const Navigation = () => {
           </Link>
           <Link
             href="/faq"
-            className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
+            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
           >
             {t('nav.faq')}
           </Link>
           <Link
             href="/about"
-            className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
+            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
           >
             {t('nav.about')}
           </Link>
           <Link
             href="/extension"
-            className="text-gray-500 hover:text-gray-700 transition-colors text-base font-normal"
+            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
           >
             {t('nav.extension')}
           </Link>
@@ -245,7 +245,7 @@ const Navigation = () => {
             <div className="space-y-3">
               <Link
                 href="/shoppers"
-                className="flex items-center justify-between text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                className="flex items-center justify-between text-primary-600 hover:text-primary-700 transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>{t('nav.shoppers')}</span>
@@ -254,7 +254,7 @@ const Navigation = () => {
                   alt="Arrow Down Right"
                   width={16}
                   height={16}
-                  className="text-gray-400"
+                  className="text-primary-600"
                   style={{
                     backgroundColor: 'transparent',
                     background: 'transparent',
@@ -264,14 +264,14 @@ const Navigation = () => {
               </Link>
               <Link
                 href="/merchants"
-                className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                className="block text-primary-600 hover:text-primary-700 transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t('nav.merchants')}
               </Link>
               <Link
                 href="/blog"
-                className="flex items-center justify-between text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                className="flex items-center justify-between text-primary-600 hover:text-primary-700 transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <span>{t('nav.blog')}</span>
@@ -280,7 +280,7 @@ const Navigation = () => {
                   alt="Arrow Down Right"
                   width={16}
                   height={16}
-                  className="text-gray-400"
+                  className="text-primary-600"
                   style={{
                     backgroundColor: 'transparent',
                     background: 'transparent',
@@ -290,21 +290,21 @@ const Navigation = () => {
               </Link>
               <Link
                 href="/faq"
-                className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                className="block text-primary-600 hover:text-primary-700 transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t('nav.faq')}
               </Link>
               <Link
                 href="/about"
-                className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                className="block text-primary-600 hover:text-primary-700 transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t('nav.about')}
               </Link>
               <Link
                 href="/extension"
-                className="block text-gray-700 hover:text-black transition-colors text-base font-medium py-2"
+                className="block text-primary-600 hover:text-primary-700 transition-colors text-base font-medium py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {t('nav.extension')}

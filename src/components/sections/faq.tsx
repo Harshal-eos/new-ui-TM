@@ -27,7 +27,7 @@ const FAQ = () => {
             <div className="h-[880px] flex flex-col justify-center items-center gap-11">
                 {/* Section Title */}
                 <div className="text-center">
-                    <h2 className="text-[96px] font-serif text-primary-600 leading-[1] tracking-[-0.03em] w-[1114px] font-normal">
+                    <h2 className="text-[96px] font-serif leading-[1] tracking-[-0.03em] w-[1114px] font-normal" style={{ color: '#7826F2' }}>
                         Frequently Asked Questions
                     </h2>
                 </div>

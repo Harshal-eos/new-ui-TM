@@ -120,7 +120,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '34px' }}>
+    <nav className="w-full py-2 px-2 sm:py-4 sm:px-4 md:py-6 md:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '8px 16px' }}>
       <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -128,12 +128,12 @@ const Navigation = () => {
         </div>
 
         {/* White rounded navigation container */}
-        <div className="bg-white rounded-full px-6 py-2 flex items-center" style={{ gap: 'calc(var(--spacing) * 12)' }}>
+        <div className="bg-white rounded-full px-2 py-1 sm:px-4 sm:py-2 md:px-6 md:py-2 flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center h-full" style={{ gap: 'calc(var(--spacing) * 12)' }}>
+          <div className="hidden lg:flex items-center h-full gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             <Link
               href="/shoppers"
-              className="flex items-center gap-2 text-primary-600 px-3 py-1.5 rounded-full"
+              className="flex items-center gap-1 sm:gap-2 text-primary-600 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm md:text-base"
               style={{ backgroundColor: '#E8E0FF' }}
             >
               <span>{t('nav.shoppers')}</span>
@@ -153,13 +153,13 @@ const Navigation = () => {
             </Link>
             <Link
               href="/merchants"
-              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-xs sm:text-sm md:text-base font-normal px-2 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-gray-50"
             >
               {t('nav.merchants')}
             </Link>
             <Link
               href="/blog"
-              className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+              className="flex items-center gap-1 sm:gap-2 text-primary-600 hover:text-primary-700 transition-colors text-xs sm:text-sm md:text-base font-normal px-2 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-gray-50"
             >
               {t('nav.blog')}
               <Image
@@ -177,19 +177,19 @@ const Navigation = () => {
             </Link>
             <Link
               href="/faq"
-              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-xs sm:text-sm md:text-base font-normal px-2 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-gray-50"
             >
               {t('nav.faq')}
             </Link>
             <Link
               href="/about"
-              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-xs sm:text-sm md:text-base font-normal px-2 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-gray-50"
             >
               {t('nav.about')}
             </Link>
             <Link
               href="/extension"
-              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-xs sm:text-sm md:text-base font-normal px-2 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-gray-50"
             >
               {t('nav.extension')}
             </Link>

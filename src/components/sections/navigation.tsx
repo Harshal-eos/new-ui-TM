@@ -120,75 +120,69 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16 bg-white">
-      <div className="mx-auto flex items-center justify-between navbar">
+    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: '#7826F2' }}>
+      <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
           <TravelMoneyLogo />
         </div>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-16">
-          <Link
-            href="/shoppers"
-            className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
-          >
-            {t('nav.shoppers')}
-            <img
-              src="/images/ArrowDownRight.webp"
-              alt="Arrow Down Right"
-              width={16}
-              height={16}
-              className="text-primary-600"
-              style={{
-                backgroundColor: 'transparent',
-                background: 'transparent',
-                mixBlendMode: 'multiply'
-              }}
-            />
-          </Link>
-          <Link
-            href="/merchants"
-            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
-          >
-            {t('nav.merchants')}
-          </Link>
-          <Link
-            href="/blog"
-            className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
-          >
-            {t('nav.blog')}
-            <img
-              src="/images/ArrowDownRight.webp"
-              alt="Arrow Down Right"
-              width={16}
-              height={16}
-              className="text-primary-600"
-              style={{
-                backgroundColor: 'transparent',
-                background: 'transparent',
-                mixBlendMode: 'multiply'
-              }}
-            />
-          </Link>
-          <Link
-            href="/faq"
-            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
-          >
-            {t('nav.faq')}
-          </Link>
-          <Link
-            href="/about"
-            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
-          >
-            {t('nav.about')}
-          </Link>
-          <Link
-            href="/extension"
-            className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
-          >
-            {t('nav.extension')}
-          </Link>
+        {/* White rounded navigation container */}
+        <div className="bg-white rounded-full px-8 py-4 flex items-center gap-8">
+          {/* Desktop Navigation Links */}
+          <div className="hidden lg:flex items-center gap-8">
+            <Link
+              href="/shoppers"
+              className="flex items-center gap-2 text-white px-4 py-2 rounded-full"
+              style={{ backgroundColor: '#E8E0FF' }}
+            >
+              <span style={{ color: '#7826F2' }}>{t('nav.shoppers')}</span>
+              <Image
+                src="/images/ArrowDownRight.webp"
+                alt="Arrow Down Right"
+                width={16}
+                height={16}
+                className="w-4 h-4"
+              />
+            </Link>
+            <Link
+              href="/merchants"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+            >
+              {t('nav.merchants')}
+            </Link>
+            <Link
+              href="/blog"
+              className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+            >
+              {t('nav.blog')}
+              <Image
+                src="/images/ArrowDownRight.webp"
+                alt="Arrow Down Right"
+                width={16}
+                height={16}
+                className="w-4 h-4"
+              />
+            </Link>
+            <Link
+              href="/faq"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+            >
+              {t('nav.faq')}
+            </Link>
+            <Link
+              href="/about"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+            >
+              {t('nav.about')}
+            </Link>
+            <Link
+              href="/extension"
+              className="text-primary-600 hover:text-primary-700 transition-colors text-base font-normal"
+            >
+              {t('nav.extension')}
+            </Link>
+          </div>
         </div>
 
         {/* Right Side - Language Selector & Mobile Menu Button */}

@@ -47,7 +47,7 @@ const Hero = () => {
                 {/* Text content wrapper */}
                 <div className="flex flex-col items-center text-center" style={{ position: 'relative', bottom: '144px' }}>
                     {/* Main heading div */}
-                    <div>
+                    <div className="mb-8">
                         <h1 className="text-white leading-[90%] tracking-[-3%] text-center mb-8" style={{ fontWeight: 600, fontSize: '5rem' }}>
                             <span style={{ fontWeight: 600 }}>Welcome to the</span><br />
                             <span className="font-medium italic" style={{ fontFamily: 'Instrument Serif', letterSpacing: '0%' }}>future</span> of <span className="font-medium italic" style={{ fontFamily: 'Instrument Serif', letterSpacing: '0%' }}>travel shopping</span>

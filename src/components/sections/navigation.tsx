@@ -120,7 +120,7 @@ const Navigation = () => {
   ]
 
   return (
-    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: '#7826F2' }}>
+    <nav className="w-full py-4 px-4 sm:py-6 sm:px-6 lg:py-8 lg:px-16" style={{ backgroundColor: 'rgb(120, 38, 242)', padding: '6px' }}>
       <div className="mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex-shrink-0">
@@ -128,21 +128,27 @@ const Navigation = () => {
         </div>
 
         {/* White rounded navigation container */}
-        <div className="bg-white rounded-full px-8 py-4 flex items-center gap-8">
+        <div className="bg-white rounded-full px-6 py-2 flex items-center" style={{ gap: 'calc(var(--spacing) * 12)' }}>
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center h-full" style={{ gap: 'calc(var(--spacing) * 12)' }}>
             <Link
               href="/shoppers"
-              className="flex items-center gap-2 text-white px-4 py-2 rounded-full"
+              className="flex items-center gap-2 text-primary-600 px-3 py-1.5 rounded-full"
               style={{ backgroundColor: '#E8E0FF' }}
             >
-              <span style={{ color: '#7826F2' }}>{t('nav.shoppers')}</span>
+              <span>{t('nav.shoppers')}</span>
               <Image
                 src="/images/ArrowDownRight.webp"
                 alt="Arrow Down Right"
                 width={16}
                 height={16}
                 className="w-4 h-4"
+                style={{
+                  backgroundColor: 'transparent',
+                  background: 'transparent',
+                  mixBlendMode: 'multiply',
+                  filter: 'hue-rotate(20deg) saturate(1.5) brightness(1.2)'
+                }}
               />
             </Link>
             <Link
@@ -162,6 +168,11 @@ const Navigation = () => {
                 width={16}
                 height={16}
                 className="w-4 h-4"
+                style={{
+                  backgroundColor: 'transparent',
+                  background: 'transparent',
+                  mixBlendMode: 'multiply'
+                }}
               />
             </Link>
             <Link

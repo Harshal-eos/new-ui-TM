@@ -8,13 +8,17 @@ const Hero = () => {
     const { t, language } = useLanguage()
 
     return (
-        <div className="relative h-[150vh] w-full overflow-hidden bg-gradient-to-br from-purple-600 via-purple-700 to-purple-900">
-            {/* Background gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/30 to-purple-900/60"></div>
-
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2">
-                <Image src="/images/hero-image.png" alt="Eiffel Tower" width={500} height={280} />
-            </div>
+        <div
+            className="relative h-[150vh] w-full overflow-hidden"
+            style={{
+                backgroundImage: 'url(/images/hero-image.png)',
+                backgroundSize: '40%',
+                backgroundPosition: 'center top',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
+            {/* Color gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/80 via-purple-700/70 to-purple-900/80"></div>
 
             {/* Trees silhouettes */}
             <div className="absolute bottom-32 left-20">
@@ -33,33 +37,28 @@ const Hero = () => {
 
             {/* Main content */}
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-8 mt-20">
-                {/* Welcome text with emojis */}
-                <div className="relative mb-8">
-                    {/* Cool emoji */}
-                    <div className="absolute -top-4 left-20 text-4xl animate-bounce">
-                        😎
+                {/* Text content wrapper */}
+                <div className="flex flex-col items-center text-center" style={{ position: 'relative', bottom: '144px' }}>
+                    {/* Main heading div */}
+                    <div>
+                        <h1 className="text-white leading-[90%] tracking-[-3%] text-center mb-8" style={{ fontWeight: 600, fontSize: '5rem' }}>
+                            <span style={{ fontWeight: 600 }}>Welcome to the</span><br />
+                            <span className="font-medium italic" style={{ fontFamily: 'Instrument Serif', letterSpacing: '0%' }}>future</span> of <span className="font-medium italic" style={{ fontFamily: 'Instrument Serif', letterSpacing: '0%' }}>travel shopping</span>
+                        </h1>
                     </div>
 
-                    {/* Gift emoji */}
-                    <div className="absolute -top-2 right-4 text-3xl animate-pulse">
-                        🎁
+                    {/* Sub-texts div */}
+                    <div>
+                        {/* Sub-text 1 */}
+                        <p className="text-white text-lg md:text-xl mb-2">
+                            Shop abroad in <span className="underline">three easy steps</span>.
+                        </p>
+
+                        {/* Sub-text 2 */}
+                        <p className="text-white text-base md:text-lg">
+                            Check the country rules for tax-free shopping and get your refund.
+                        </p>
                     </div>
-
-                    {/* Heart emoji */}
-                    <div className="absolute top-16 -left-8 text-2xl animate-ping">
-                        ❤️
-                    </div>
-
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-                        Welcome to the <span className="font-light italic">future</span> of travel shopping
-                    </h1>
-                </div>
-
-                {/* Subtitle */}
-                <div className="text-white text-lg md:text-xl max-w-3xl">
-                    <p className="text-white/90">
-                        Shop abroad in three easy steps. Check the country rules for tax-free shopping and get your refund.
-                    </p>
                 </div>
             </div>
 
